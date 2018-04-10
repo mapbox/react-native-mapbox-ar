@@ -1,0 +1,5 @@
+*.tgz
+examples
+.git
+node_modules
+.DS_Store
