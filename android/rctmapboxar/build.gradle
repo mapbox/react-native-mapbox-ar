@@ -17,7 +17,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {
@@ -25,4 +24,9 @@ dependencies {
 
     // React Native
     provided "com.facebook.react:react-native:+"
+
+    // Mapbox
+    compile ('com.mapbox.mapboxsdk:mapbox-android-telemetry:3.0.0@aar'){
+        transitive=true
+    }
 }
