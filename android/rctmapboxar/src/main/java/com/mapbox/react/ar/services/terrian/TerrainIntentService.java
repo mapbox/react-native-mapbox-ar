@@ -13,6 +13,8 @@ import android.support.annotation.Nullable;
 
 import com.facebook.react.bridge.WritableMap;
 import com.mapbox.react.ar.MapboxManager;
+import com.mapbox.react.ar.core.Object3D;
+import com.mapbox.react.ar.math.Vector3;
 import com.mapbox.react.ar.utils.GeoUtils;
 import com.mapbox.react.ar.geometries.PlaneGeometry;
 import com.mapbox.react.ar.utils.BitmapUtils;
@@ -21,7 +23,10 @@ import com.mapbox.react.ar.utils.ObjFileExporter;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
 public class TerrainIntentService extends IntentService {
     public static final String RGB_URL = "https://api.mapbox.com/v4/mapbox.terrain-rgb/%s/%s/%s.pngraw?access_token=%s";
@@ -48,6 +53,8 @@ public class TerrainIntentService extends IntentService {
         if (resultReceiver == null) {
             return;
         }
+
+        Object3D object3D = new Object3D();
 
         final String accessToken  = MapboxManager.getInstance().getAccessToken();
         Integer xT = intent.getIntExtra("x", 44);
@@ -99,14 +106,17 @@ public class TerrainIntentService extends IntentService {
         }
 
         geometry.computeVertexNormals();
-        addTerrainWallToGeometry(geometry);
+        object3D.addGeometry("elevations", geometry);
+
+        PlaneGeometry wallGeometry = createWalls(geometry, minElevation, maxElevation, zT);
+        object3D.addGeometry("walls", wallGeometry);
 
         Bundle bundledResults = new Bundle();
         File objFile = null;
         File tileFile = null;
 
         try {
-            objFile = ObjFileExporter.createFile(context, "terrain", geometry.toBufferGeometry());
+            objFile = ObjFileExporter.createFile(context, "terrain", object3D);
             tileFile = FSUtils.createTempImageFile(context, satelliteBitmap);
         } catch (IOException e) {
             bundledResults.putString(TerrainResultReceiver.RESULT_NAME, e.getLocalizedMessage());
@@ -123,7 +133,50 @@ public class TerrainIntentService extends IntentService {
         resultReceiver.send(TerrainResultReceiver.RESULT_OK, bundledResults);
     }
 
-    private void addTerrainWallToGeometry(PlaneGeometry geometry) {
+    private PlaneGeometry createWalls(PlaneGeometry geometry, float minElevation, float maxElevation, int zoomLevel) {
+        List<Integer> indices = new ArrayList<>();
 
+        // north
+        for (int i = 0; i < geometry.width - 1; i++) {
+            indices.add(i);
+        }
+
+        // east
+        for (int i = 1; i < geometry.height; i++) {
+            indices.add(i * geometry.width - 1);
+        }
+
+        // south
+        for (int i = 0; i < geometry.width - 1; i++) {
+            indices.add(geometry.height * geometry.width - i - 1);
+        }
+
+        // west
+        for (int i = 1; i < geometry.height; i++) {
+            indices.add(geometry.height * geometry.width - i * geometry.width);
+        }
+
+        indices.add(0);
+        Collections.reverse(indices);
+
+        int wallLength = indices.size();
+        PlaneGeometry wallGeometry = new PlaneGeometry(wallLength, 128, wallLength - 1, 1);
+        float wallBottom = minElevation - (maxElevation - minElevation) / 10.f;
+
+        for (int i = 0; i < indices.size(); i++) {
+            int index = indices.get(i);
+            Vector3 vertex = geometry.vertices[index];
+
+            wallGeometry.vertices[i].x = vertex.x;
+            wallGeometry.vertices[i + wallLength].x = vertex.x;
+
+            wallGeometry.vertices[i].y = vertex.y;
+            wallGeometry.vertices[i + wallLength].y = vertex.y;
+
+            wallGeometry.vertices[i].z = vertex.z;
+            wallGeometry.vertices[i + wallLength].z = (float) GeoUtils.scaleElevation(wallBottom, zoomLevel);
+        }
+
+        return wallGeometry;
     }
 }

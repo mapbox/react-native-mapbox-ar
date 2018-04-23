@@ -1,16 +1,13 @@
-package com.mapbox.react.ar.geometries;
+package com.mapbox.react.ar.core;
 
+import com.mapbox.react.ar.core.BufferGeometry;
 import com.mapbox.react.ar.math.Face3;
 import com.mapbox.react.ar.math.Vector2;
 import com.mapbox.react.ar.math.Vector3;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 public class Geometry {
     public Vector3[] vertices;

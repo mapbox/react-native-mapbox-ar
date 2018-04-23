@@ -12,14 +12,8 @@ class LandGrab extends React.Component {
   render () {
     return (
       <ViroARScene>
-        <ViroDirectionalLight
-         color='#ffffff'
-         castsShadow={true}
-         shadowFarZ={200}
-         shadowNearZ={200 * 0.25}
-         shadowMapSize={256}
-         shadowOpacity={0.2}
-         direction={[0, -1, 0]} />
+        <ViroAmbientLight
+         color='#ffffff' />
         <MapboxAR.Terrian />
       </ViroARScene>
     );

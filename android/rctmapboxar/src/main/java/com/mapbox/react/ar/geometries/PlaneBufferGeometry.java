@@ -1,5 +1,7 @@
 package com.mapbox.react.ar.geometries;
 
+import com.mapbox.react.ar.core.BufferGeometry;
+
 public class PlaneBufferGeometry extends BufferGeometry {
     public int width;
     public int height;

@@ -1,6 +1,6 @@
 package com.mapbox.react.ar.geometries;
 
-import com.mapbox.react.ar.geometries.Geometry;
+import com.mapbox.react.ar.core.Geometry;
 
 public class PlaneGeometry extends Geometry {
     public int width;

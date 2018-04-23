@@ -1,4 +1,4 @@
-package com.mapbox.react.ar.geometries;
+package com.mapbox.react.ar.core;
 
 public class BufferGeometry {
     public IntBuffer index;
