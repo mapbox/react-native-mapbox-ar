@@ -1,8 +1,10 @@
+import { NativeModules } from 'react-native';
+
 import locationManager from './modules/locationManager';
 
 import Terrian from './components/Terrian';
 
-let MapboxAR = {};
+let MapboxAR = { ...NativeModules.MapboxARModule };
 
 // components
 MapboxAR.World = null;

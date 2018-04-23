@@ -17,6 +17,9 @@ import MapboxAR from '@mapbox/react-native-mapbox-ar';
 import LandGrab from './src/examples/LandGrab';
 
 const VIRO_API_KEY = 'AAAAC06D-F938-41A7-BCA5-A44F72ACEDD9';
+const MAPBOX_ACCESS_TOKEN = 'pk.eyJ1Ijoibmlja2l0YWxpYW5vIiwiYSI6ImNqNzlia29wbTAwMzAycXF6bm55Mjlyc3UifQ.lob2IIX6ce6iaS206_hkJA';
+
+MapboxAR.setAccessToken(MAPBOX_ACCESS_TOKEN);
 
 class ExampleItem {
   constructor (label, SceneComponent) {
@@ -69,10 +72,7 @@ class App extends React.Component {
   }
 
   renderActiveARExample () {
-    if (this.state.activeExample < 0) {
-      return null;
-    }
-
+    const isVisible = this.state.activeExample > -1;
     const activeExample = Examples[this.state.activeExample];
 
     const leftNavComponent = {
@@ -82,15 +82,18 @@ class App extends React.Component {
     };
 
     return (
-      <Modal style={styles.container} onRequestClose={this.onBack} animationType='slide'>
+      <Modal visible={isVisible} style={styles.container} onRequestClose={this.onBack} animationType='slide'>
         <Header
           leftComponent={leftNavComponent}
-          centerComponent={{ text: activeExample.label, style: styles.headerText }}
-          style={{ position: 'absolute', top: 0, left: 0, right: 0 }}/>
-        <ViroARSceneNavigator
-          style={styles.container}
-          initialScene={{ scene: activeExample.SceneComponent }}
-          apiKey={VIRO_API_KEY} />
+          centerComponent={{ text: activeExample && activeExample.label, style: styles.headerText }}
+          style={{ position: 'absolute', top: 0, left: 0, right: 0 }} />
+
+        {isVisible ? (
+          <ViroARSceneNavigator
+            style={styles.container}
+            initialScene={{ scene: activeExample.SceneComponent }}
+            apiKey={VIRO_API_KEY} />
+        ) : null}
       </Modal>
     );
   }
