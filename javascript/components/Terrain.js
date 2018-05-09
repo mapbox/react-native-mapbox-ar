@@ -240,7 +240,11 @@ class Terrain extends React.Component {
     const canBeDoubled = width < DOUBLE_THRESHOLD && height < DOUBLE_THRESHOLD;
     const bumpZoom = canBeDoubled ? 2 : 1;
 
-    return `${BASE_SATELLITE_TILE_URI}/${centerCoord},${zoom + bumpZoom}/${width * 2}x${height * 2}@2x.png?access_token={ACCESS_TOKEN}`;
+    const x = canBeDoubled ? 2 * width : width;
+    const y = canBeDoubled ? 2 * height : height;
+    const z = canBeDoubled ? zoom + bumpZoom : zoom;
+
+    return `${BASE_SATELLITE_TILE_URI}/${centerCoord},${z}/${x}x${y}@2x.png?access_token={ACCESS_TOKEN}`;
   }
 
   _isValidZoomLevel (zoomLevel) {
