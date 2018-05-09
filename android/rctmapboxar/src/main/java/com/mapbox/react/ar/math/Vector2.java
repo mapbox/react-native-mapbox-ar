@@ -1,5 +1,7 @@
 package com.mapbox.react.ar.math;
 
+import java.util.Locale;
+
 public class Vector2 {
     public float x;
     public float y;
@@ -18,6 +20,6 @@ public class Vector2 {
     }
 
     public String toString() {
-        return String.format("%f %f", x, y);
+        return String.format(Locale.ENGLISH, "%f %f", x, y);
     }
 }

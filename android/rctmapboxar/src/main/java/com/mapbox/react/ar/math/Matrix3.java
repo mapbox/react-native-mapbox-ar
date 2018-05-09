@@ -51,7 +51,7 @@ public class Matrix3 {
 
         float det = n11 * t11 + n21 * t12 + n31 * t13;
 
-        if (det == 0) {
+        if (det == 0.f) {
             elements = IDENTITY;
             return;
         }

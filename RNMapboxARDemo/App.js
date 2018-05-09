@@ -15,9 +15,10 @@ import { ViroARSceneNavigator } from 'react-viro';
 import MapboxAR from '@mapbox/react-native-mapbox-ar';
 
 import LandGrab from './src/examples/LandGrab';
+import tokens from './tokens.json';
 
-const VIRO_API_KEY = 'AAAAC06D-F938-41A7-BCA5-A44F72ACEDD9';
-const MAPBOX_ACCESS_TOKEN = 'pk.eyJ1Ijoibmlja2l0YWxpYW5vIiwiYSI6ImNqNzlia29wbTAwMzAycXF6bm55Mjlyc3UifQ.lob2IIX6ce6iaS206_hkJA';
+const VIRO_API_KEY = tokens.viro;
+const MAPBOX_ACCESS_TOKEN = tokens.mapbox;
 
 MapboxAR.setAccessToken(MAPBOX_ACCESS_TOKEN);
 

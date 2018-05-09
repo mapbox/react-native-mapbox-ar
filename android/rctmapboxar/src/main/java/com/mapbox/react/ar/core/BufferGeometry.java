@@ -1,5 +1,8 @@
 package com.mapbox.react.ar.core;
 
+import com.mapbox.react.ar.math.Vector2;
+import com.mapbox.react.ar.math.Vector3;
+
 public class BufferGeometry {
     public IntBuffer index;
 
@@ -11,6 +14,7 @@ public class BufferGeometry {
         switch (name) {
             case "index":
                 index = new IntBuffer(capacity);
+                break;
             case "position":
                 position = new FloatBuffer(capacity);
                 break;
@@ -23,7 +27,7 @@ public class BufferGeometry {
         }
     }
 
-    public static class FloatBuffer {
+    public static final class FloatBuffer {
         float[] buffer;
         private int offset;
 
@@ -35,6 +39,17 @@ public class BufferGeometry {
             buffer[offset++] = value;
         }
 
+        public void put(Vector3 vector3) {
+            put(vector3.x);
+            put(vector3.y);
+            put(vector3.z);
+        }
+
+        public void put(Vector2 vector2) {
+            put(vector2.x);
+            put(vector2.y);
+        }
+
         public float get(int position) {
             return buffer[position];
         }
@@ -44,7 +59,7 @@ public class BufferGeometry {
         }
     }
 
-    public static class IntBuffer {
+    public static final class IntBuffer {
         int[] buffer;
         private int offset;
 

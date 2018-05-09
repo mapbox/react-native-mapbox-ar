@@ -1,5 +1,7 @@
 package com.mapbox.react.ar.math;
 
+import java.util.Locale;
+
 public class Vector3 {
     public float x;
     public float y;
@@ -32,9 +34,13 @@ public class Vector3 {
     }
 
     public void cross(Vector3 vector) {
-        x = y * vector.z - z * vector.y;
-        y = z * vector.x - x * vector.z;
-        z = x * vector.y - y * vector.x;
+        float newX = y * vector.z - z * vector.y;
+        float newY = z * vector.x - x * vector.z;
+        float newZ = x * vector.y - y * vector.x;
+
+        x = newX;
+        y = newY;
+        z = newZ;
     }
 
     public void add(Vector3 vector) {
@@ -50,6 +56,7 @@ public class Vector3 {
     public void normalize() {
         float len = length();
         float scalar = len > 0.f ? 1.f / len : 0.f;
+
         x *= scalar;
         y *= scalar;
         z *= scalar;
@@ -77,6 +84,6 @@ public class Vector3 {
     }
 
     public String toString() {
-        return String.format("%f %f %f", x, y, z);
+        return String.format(Locale.ENGLISH, "%f %f %f", x, y, z);
     }
 }

@@ -5,7 +5,7 @@
 
     <application>
         <service
-            android:name=".services.terrian.TerrainIntentService"
+            android:name=".services.terrain.TerrainIntentService"
             android:exported="false" />
     </application>
 </manifest>

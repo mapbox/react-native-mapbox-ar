@@ -1,4 +1,4 @@
-package com.mapbox.react.ar.services.terrian;
+package com.mapbox.react.ar.services.terrain;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -8,7 +8,6 @@ public class TerrainResultReceiver extends ResultReceiver {
     public static final int RESULT_OK = 1000;
     public static final int RESULT_ERROR = -1;
     public static final String RESULT_NAME = "terrianResponse";
-    public static final String EXTRA_NAME = "terrianReceiver";
 
     private TerrianResultCallback callback;
 

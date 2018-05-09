@@ -1,6 +1,5 @@
 package com.mapbox.react.ar.core;
 
-import com.mapbox.react.ar.core.BufferGeometry;
 import com.mapbox.react.ar.math.Face3;
 import com.mapbox.react.ar.math.Vector2;
 import com.mapbox.react.ar.math.Vector3;
@@ -9,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Geometry {
+public abstract class Geometry {
     public Vector3[] vertices;
 
     public List<Face3> faces;
@@ -31,6 +30,10 @@ public class Geometry {
         Vector3 vB;
         Vector3 vC;
 
+        Vector3 localA;
+        Vector3 localB;
+        Vector3 localC;
+
         Vector3 cb = new Vector3();
         Vector3 ab = new Vector3();
 
@@ -45,21 +48,23 @@ public class Geometry {
             ab.subVector(vA, vB);
             cb.cross(ab);
 
+
             localVertices[face.a].add(cb);
             localVertices[face.b].add(cb);
             localVertices[face.c].add(cb);
-        }
 
-        for (int i = 0; i < this.vertices.length; i++) {
-            localVertices[i].normalize();
-        }
+            localA = localVertices[face.a];
+            localA.normalize();
 
-        for (int i = 0; i < faces.size(); i++) {
-            Face3 face = faces.get(i);
+            localB = localVertices[face.b];
+            localB.normalize();
 
-            face.vertexNormals[0].copy(localVertices[face.a]);
-            face.vertexNormals[1].copy(localVertices[face.b]);
-            face.vertexNormals[2].copy(localVertices[face.c]);
+            localC = localVertices[face.c];
+            localC.normalize();
+
+            face.vertexNormals[0].copy(localA);
+            face.vertexNormals[1].copy(localB);
+            face.vertexNormals[2].copy(localC);
         }
     }
 
@@ -77,9 +82,7 @@ public class Geometry {
             cb.subVector(vC, vB);
             ab.subVector(vA, vB);
             cb.cross(ab);
-
             cb.normalize();
-
             face.normal.copy(cb);
         }
     }
@@ -104,39 +107,26 @@ public class Geometry {
             Face3 face = faces.get(i);
 
             Vector3 vA = vertices[face.a];
-            bufferGeometry.position.put(vA.x);
-            bufferGeometry.position.put(vA.y);
-            bufferGeometry.position.put(vA.z);
+            bufferGeometry.position.put(vA);
 
             Vector3 vB = vertices[face.b];
-            bufferGeometry.position.put(vB.x);
-            bufferGeometry.position.put(vB.y);
-            bufferGeometry.position.put(vB.z);
+            bufferGeometry.position.put(vB);
 
             Vector3 vC = vertices[face.c];
-            bufferGeometry.position.put(vC.x);
-            bufferGeometry.position.put(vC.y);
-            bufferGeometry.position.put(vC.z);
+            bufferGeometry.position.put(vC);
 
             Vector3 vN = face.vertexNormals[0];
-            bufferGeometry.normal.put(vN.x);
-            bufferGeometry.normal.put(vN.y);
-            bufferGeometry.normal.put(vN.z);
+            bufferGeometry.normal.put(vN);
 
             vN = face.vertexNormals[1];
-            bufferGeometry.normal.put(vN.x);
-            bufferGeometry.normal.put(vN.y);
-            bufferGeometry.normal.put(vN.z);
+            bufferGeometry.normal.put(vN);
 
             vN = face.vertexNormals[2];
-            bufferGeometry.normal.put(vN.x);
-            bufferGeometry.normal.put(vN.y);
-            bufferGeometry.normal.put(vN.z);
+            bufferGeometry.normal.put(vN);
 
             List<Vector2> vertexUvs = faceVertexUvs.get(i);
             for (Vector2 vertexUv : vertexUvs) {
-                bufferGeometry.uv.put(vertexUv.x);
-                bufferGeometry.uv.put(vertexUv.y);
+                bufferGeometry.uv.put(vertexUv);
             }
         }
 
@@ -160,7 +150,7 @@ public class Geometry {
         int nOffset = 0;
         int uOffset = 0;
 
-        while(i < positions.size()) {
+        while (i < positions.size()) {
             vertices[vOffset++] = new Vector3(positions.get(i), positions.get(i + 1), positions.get(i + 2));
 
             if (normals.size() > 0) {

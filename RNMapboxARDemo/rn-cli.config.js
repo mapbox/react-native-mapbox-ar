@@ -17,6 +17,7 @@ module.exports = {
     // this is really a hack to allow us to resolve deps between the example and ar library
     'react': path.resolve(__dirname, 'node_modules/react'),
     'react-viro': path.resolve(__dirname, 'node_modules/react-viro'),
+    'prop-types': path.resolve(__dirname, 'node_modules/prop-types'),
     '@mapbox/react-native-mapbox-ar': path.resolve(__dirname, '../javascript'),
   },
 
