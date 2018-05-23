@@ -45,7 +45,7 @@ class LandGrab extends React.Component {
       <ViroARScene dragType='FixedToWorld' onPinch={this.onPinch} onRotate={() => console.log('ROTATE')}>
         <ViroAmbientLight color='#ffffff' />
 
-        <Terrain
+        <MapboxAR.Terrain
           draggable
           id='coolTerrain'
           sampleSize={3}
