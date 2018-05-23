@@ -19,10 +19,17 @@ class LandGrab extends React.Component {
     super(props);
 
     this.state = {
-      scale: 2,
+      scale: 0.005,
     };
 
     this.onPinch = this.onPinch.bind(this);
+
+    this.yosemite = this.yosemite.bind(this);
+    this.squaw = this.squaw.bind(this);
+    this.tahoe = this.tahoe.bind(this);
+    this.kauai = this.kauai.bind(this);
+    this.spa = this.spa.bind(this);
+    this.nurburgring = this.nurburgring.bind(this);
   }
 
   onPinch (pitchState, scaleFactor, source) {
@@ -41,11 +48,35 @@ class LandGrab extends React.Component {
         <MapboxAR.Terrain
           draggable
           id='coolTerrain'
-          sampleSize={6}
+          sampleSize={3}
           scale={this.state.scale}
-          bbox={[-112.49975, 36.36191, -112.457007, 36.388171]} />
+          bbox={this.yosemite()} />
       </ViroARScene>
     );
+  }
+
+  yosemite () {
+    return [-119.667111,37.682308,-119.489696,37.786133];
+  }
+
+  squaw () {
+    return [-120.298941,39.172602,-120.196572,39.222229];
+  }
+
+  tahoe () {
+    return [-120.229716,38.878172,-119.769107,39.286996];
+  }
+
+  kauai () {
+    return [-159.796592,21.85586,-159.283945,22.248503];
+  }
+
+  spa () {
+    return [5.954657,50.426648,5.981694,50.447548];
+  }
+
+  nurburgring () {
+    return [6.916266,50.322067,7.007493,50.382967];
   }
 }
 

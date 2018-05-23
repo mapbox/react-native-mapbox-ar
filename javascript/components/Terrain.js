@@ -240,8 +240,8 @@ class Terrain extends React.Component {
     const canBeDoubled = width < DOUBLE_THRESHOLD && height < DOUBLE_THRESHOLD;
     const bumpZoom = canBeDoubled ? 2 : 1;
 
-    const x = canBeDoubled ? 2 * width : width;
-    const y = canBeDoubled ? 2 * height : height;
+    const x = canBeDoubled ? 4 * width : width;
+    const y = canBeDoubled ? 4 * height : height;
     const z = canBeDoubled ? zoom + bumpZoom : zoom;
 
     return `${BASE_SATELLITE_TILE_URI}/${centerCoord},${z}/${x}x${y}@2x.png?access_token={ACCESS_TOKEN}`;
@@ -317,7 +317,7 @@ class Terrain extends React.Component {
     const nodeProps = {
       dragType: this.props.draggable ? 'FixedToWorld' : undefined,
       rotation: [0, 0, 0],
-      position: [0, -TILE_SIZE / this.props.sampleSize, -TILE_SIZE / this.props.sampleSize],
+      position: [0,0,0]
     };
 
     return (
