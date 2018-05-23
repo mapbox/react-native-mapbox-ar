@@ -20,9 +20,6 @@ RCT_REMAP_METHOD(createMesh, createMeshWithOptions:(NSDictionary *)options withR
   TerrainService *terrainService = [[TerrainService alloc] initWithOptions:options completion:^(NSDictionary *localObjectURLs) {
     resolve(localObjectURLs);
   }];
-//  TerrainService *terrainService = [[TerrainService alloc] initWithX:44 andY:98 andZoom:8 completion:^(NSDictionary *localObjectURLs) {
-//    resolve(localObjectURLs);
-//  }];
 }
 
 @end
