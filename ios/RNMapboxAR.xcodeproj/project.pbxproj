@@ -9,6 +9,24 @@
 /* Begin PBXBuildFile section */
 		C42C561C207818FB00E440C6 /* RNMapboxAR.m in Sources */ = {isa = PBXBuildFile; fileRef = C42C561B207818FB00E440C6 /* RNMapboxAR.m */; };
 		C42C561D207818FB00E440C6 /* RNMapboxAR.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C42C561A207818FB00E440C6 /* RNMapboxAR.h */; };
+		C4B4C1D920BA73B100333D26 /* BufferGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B4C1B520BA73AE00333D26 /* BufferGeometry.m */; };
+		C4B4C1DA20BA73B100333D26 /* PlaneGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B4C1B720BA73AE00333D26 /* PlaneGeometry.m */; };
+		C4B4C1DB20BA73B200333D26 /* TerrainService.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B4C1BC20BA73AE00333D26 /* TerrainService.m */; };
+		C4B4C1DC20BA73B200333D26 /* Face3.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B4C1BF20BA73AF00333D26 /* Face3.m */; };
+		C4B4C1DD20BA73B200333D26 /* PlaneBufferGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B4C1C120BA73AF00333D26 /* PlaneBufferGeometry.m */; };
+		C4B4C1DE20BA73B200333D26 /* Matrix4.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B4C1C220BA73AF00333D26 /* Matrix4.m */; };
+		C4B4C1DF20BA73B200333D26 /* Object3D.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B4C1C320BA73AF00333D26 /* Object3D.m */; };
+		C4B4C1E020BA73B200333D26 /* MapboxManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B4C1C420BA73AF00333D26 /* MapboxManager.m */; };
+		C4B4C1E120BA73B200333D26 /* Matrix3.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B4C1C520BA73AF00333D26 /* Matrix3.m */; };
+		C4B4C1E220BA73B200333D26 /* TerrainTile.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B4C1C620BA73AF00333D26 /* TerrainTile.m */; };
+		C4B4C1E320BA73B200333D26 /* Geometry.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B4C1C720BA73AF00333D26 /* Geometry.m */; };
+		C4B4C1E420BA73B200333D26 /* Vector2.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B4C1C920BA73B000333D26 /* Vector2.m */; };
+		C4B4C1E520BA73B200333D26 /* RCTMapboxARModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B4C1CA20BA73B000333D26 /* RCTMapboxARModule.m */; };
+		C4B4C1E620BA73B200333D26 /* RCTMapboxARTerrainModule.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B4C1CD20BA73B000333D26 /* RCTMapboxARTerrainModule.m */; };
+		C4B4C1E720BA73B200333D26 /* ObjFileExporter.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B4C1D220BA73B100333D26 /* ObjFileExporter.m */; };
+		C4B4C1E820BA73B200333D26 /* Vector3.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B4C1D320BA73B100333D26 /* Vector3.m */; };
+		C4B4C1E920BA73B200333D26 /* ListUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B4C1D520BA73B100333D26 /* ListUtils.m */; };
+		C4B4C1EA20BA73B200333D26 /* BitmapUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = C4B4C1D720BA73B100333D26 /* BitmapUtils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +46,42 @@
 		C42C5617207818FB00E440C6 /* libRNMapboxAR.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNMapboxAR.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C42C561A207818FB00E440C6 /* RNMapboxAR.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNMapboxAR.h; sourceTree = "<group>"; };
 		C42C561B207818FB00E440C6 /* RNMapboxAR.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNMapboxAR.m; sourceTree = "<group>"; };
+		C4B4C1B520BA73AE00333D26 /* BufferGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BufferGeometry.m; sourceTree = "<group>"; };
+		C4B4C1B620BA73AE00333D26 /* ObjFileExporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjFileExporter.h; sourceTree = "<group>"; };
+		C4B4C1B720BA73AE00333D26 /* PlaneGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaneGeometry.m; sourceTree = "<group>"; };
+		C4B4C1B820BA73AE00333D26 /* BufferGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BufferGeometry.h; sourceTree = "<group>"; };
+		C4B4C1B920BA73AE00333D26 /* ListUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListUtils.h; sourceTree = "<group>"; };
+		C4B4C1BA20BA73AE00333D26 /* MapboxManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapboxManager.h; sourceTree = "<group>"; };
+		C4B4C1BB20BA73AE00333D26 /* PlaneBufferGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaneBufferGeometry.h; sourceTree = "<group>"; };
+		C4B4C1BC20BA73AE00333D26 /* TerrainService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TerrainService.m; sourceTree = "<group>"; };
+		C4B4C1BD20BA73AE00333D26 /* Vector3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector3.h; sourceTree = "<group>"; };
+		C4B4C1BE20BA73AF00333D26 /* RCTMapboxARModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTMapboxARModule.h; sourceTree = "<group>"; };
+		C4B4C1BF20BA73AF00333D26 /* Face3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Face3.m; sourceTree = "<group>"; };
+		C4B4C1C020BA73AF00333D26 /* Object3D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Object3D.h; sourceTree = "<group>"; };
+		C4B4C1C120BA73AF00333D26 /* PlaneBufferGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaneBufferGeometry.m; sourceTree = "<group>"; };
+		C4B4C1C220BA73AF00333D26 /* Matrix4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Matrix4.m; sourceTree = "<group>"; };
+		C4B4C1C320BA73AF00333D26 /* Object3D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Object3D.m; sourceTree = "<group>"; };
+		C4B4C1C420BA73AF00333D26 /* MapboxManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapboxManager.m; sourceTree = "<group>"; };
+		C4B4C1C520BA73AF00333D26 /* Matrix3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Matrix3.m; sourceTree = "<group>"; };
+		C4B4C1C620BA73AF00333D26 /* TerrainTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TerrainTile.m; sourceTree = "<group>"; };
+		C4B4C1C720BA73AF00333D26 /* Geometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Geometry.m; sourceTree = "<group>"; };
+		C4B4C1C820BA73AF00333D26 /* Face3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Face3.h; sourceTree = "<group>"; };
+		C4B4C1C920BA73B000333D26 /* Vector2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vector2.m; sourceTree = "<group>"; };
+		C4B4C1CA20BA73B000333D26 /* RCTMapboxARModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTMapboxARModule.m; sourceTree = "<group>"; };
+		C4B4C1CB20BA73B000333D26 /* TerrainService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TerrainService.h; sourceTree = "<group>"; };
+		C4B4C1CC20BA73B000333D26 /* TerrainTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TerrainTile.h; sourceTree = "<group>"; };
+		C4B4C1CD20BA73B000333D26 /* RCTMapboxARTerrainModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTMapboxARTerrainModule.m; sourceTree = "<group>"; };
+		C4B4C1CE20BA73B000333D26 /* Matrix3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix3.h; sourceTree = "<group>"; };
+		C4B4C1CF20BA73B000333D26 /* Vector2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector2.h; sourceTree = "<group>"; };
+		C4B4C1D020BA73B000333D26 /* RCTMapboxARTerrainModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCTMapboxARTerrainModule.h; sourceTree = "<group>"; };
+		C4B4C1D120BA73B000333D26 /* Matrix4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix4.h; sourceTree = "<group>"; };
+		C4B4C1D220BA73B100333D26 /* ObjFileExporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjFileExporter.m; sourceTree = "<group>"; };
+		C4B4C1D320BA73B100333D26 /* Vector3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vector3.m; sourceTree = "<group>"; };
+		C4B4C1D420BA73B100333D26 /* BitmapUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BitmapUtils.h; sourceTree = "<group>"; };
+		C4B4C1D520BA73B100333D26 /* ListUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListUtils.m; sourceTree = "<group>"; };
+		C4B4C1D620BA73B100333D26 /* Geometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Geometry.h; sourceTree = "<group>"; };
+		C4B4C1D720BA73B100333D26 /* BitmapUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BitmapUtils.m; sourceTree = "<group>"; };
+		C4B4C1D820BA73B100333D26 /* PlaneGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaneGeometry.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +114,42 @@
 		C42C5619207818FB00E440C6 /* RNMapboxAR */ = {
 			isa = PBXGroup;
 			children = (
+				C4B4C1D420BA73B100333D26 /* BitmapUtils.h */,
+				C4B4C1D720BA73B100333D26 /* BitmapUtils.m */,
+				C4B4C1B820BA73AE00333D26 /* BufferGeometry.h */,
+				C4B4C1B520BA73AE00333D26 /* BufferGeometry.m */,
+				C4B4C1C820BA73AF00333D26 /* Face3.h */,
+				C4B4C1BF20BA73AF00333D26 /* Face3.m */,
+				C4B4C1D620BA73B100333D26 /* Geometry.h */,
+				C4B4C1C720BA73AF00333D26 /* Geometry.m */,
+				C4B4C1B920BA73AE00333D26 /* ListUtils.h */,
+				C4B4C1D520BA73B100333D26 /* ListUtils.m */,
+				C4B4C1BA20BA73AE00333D26 /* MapboxManager.h */,
+				C4B4C1C420BA73AF00333D26 /* MapboxManager.m */,
+				C4B4C1CE20BA73B000333D26 /* Matrix3.h */,
+				C4B4C1C520BA73AF00333D26 /* Matrix3.m */,
+				C4B4C1D120BA73B000333D26 /* Matrix4.h */,
+				C4B4C1C220BA73AF00333D26 /* Matrix4.m */,
+				C4B4C1C020BA73AF00333D26 /* Object3D.h */,
+				C4B4C1C320BA73AF00333D26 /* Object3D.m */,
+				C4B4C1B620BA73AE00333D26 /* ObjFileExporter.h */,
+				C4B4C1D220BA73B100333D26 /* ObjFileExporter.m */,
+				C4B4C1BB20BA73AE00333D26 /* PlaneBufferGeometry.h */,
+				C4B4C1C120BA73AF00333D26 /* PlaneBufferGeometry.m */,
+				C4B4C1D820BA73B100333D26 /* PlaneGeometry.h */,
+				C4B4C1B720BA73AE00333D26 /* PlaneGeometry.m */,
+				C4B4C1BE20BA73AF00333D26 /* RCTMapboxARModule.h */,
+				C4B4C1CA20BA73B000333D26 /* RCTMapboxARModule.m */,
+				C4B4C1D020BA73B000333D26 /* RCTMapboxARTerrainModule.h */,
+				C4B4C1CD20BA73B000333D26 /* RCTMapboxARTerrainModule.m */,
+				C4B4C1CB20BA73B000333D26 /* TerrainService.h */,
+				C4B4C1BC20BA73AE00333D26 /* TerrainService.m */,
+				C4B4C1CC20BA73B000333D26 /* TerrainTile.h */,
+				C4B4C1C620BA73AF00333D26 /* TerrainTile.m */,
+				C4B4C1CF20BA73B000333D26 /* Vector2.h */,
+				C4B4C1C920BA73B000333D26 /* Vector2.m */,
+				C4B4C1BD20BA73AE00333D26 /* Vector3.h */,
+				C4B4C1D320BA73B100333D26 /* Vector3.m */,
 				C42C561A207818FB00E440C6 /* RNMapboxAR.h */,
 				C42C561B207818FB00E440C6 /* RNMapboxAR.m */,
 			);
@@ -123,7 +213,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4B4C1E720BA73B200333D26 /* ObjFileExporter.m in Sources */,
+				C4B4C1DD20BA73B200333D26 /* PlaneBufferGeometry.m in Sources */,
+				C4B4C1E520BA73B200333D26 /* RCTMapboxARModule.m in Sources */,
 				C42C561C207818FB00E440C6 /* RNMapboxAR.m in Sources */,
+				C4B4C1E820BA73B200333D26 /* Vector3.m in Sources */,
+				C4B4C1DB20BA73B200333D26 /* TerrainService.m in Sources */,
+				C4B4C1DF20BA73B200333D26 /* Object3D.m in Sources */,
+				C4B4C1E120BA73B200333D26 /* Matrix3.m in Sources */,
+				C4B4C1DE20BA73B200333D26 /* Matrix4.m in Sources */,
+				C4B4C1E920BA73B200333D26 /* ListUtils.m in Sources */,
+				C4B4C1D920BA73B100333D26 /* BufferGeometry.m in Sources */,
+				C4B4C1E420BA73B200333D26 /* Vector2.m in Sources */,
+				C4B4C1E220BA73B200333D26 /* TerrainTile.m in Sources */,
+				C4B4C1E020BA73B200333D26 /* MapboxManager.m in Sources */,
+				C4B4C1E320BA73B200333D26 /* Geometry.m in Sources */,
+				C4B4C1EA20BA73B200333D26 /* BitmapUtils.m in Sources */,
+				C4B4C1E620BA73B200333D26 /* RCTMapboxARTerrainModule.m in Sources */,
+				C4B4C1DA20BA73B100333D26 /* PlaneGeometry.m in Sources */,
+				C4B4C1DC20BA73B200333D26 /* Face3.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
