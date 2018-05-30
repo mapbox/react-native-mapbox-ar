@@ -18,7 +18,7 @@ Not a Mapbox user yet? [Sign up for an account here](https://www.mapbox.com/sign
 We provide geospatial components that will work [react-viro](https://viromedia.com/viroreact/). We suggest that when
 setting up a project that you follow Viro's [quick start](https://docs.viromedia.com/docs/viro-platform-overview).
 
-More detailed instructions are on the way!
+More detailed instructions are on the way! Checkout our [example project in the meantime](/RNMapboxARDemo/README.md)
 
 ## Developer Group
 
