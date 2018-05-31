@@ -1,6 +1,6 @@
 # Mapbox Augmented Reality SDK for React Native
 
-_An official React Native component for building cross platform augmented realitiy applications_
+_An official React Native component for building cross platform augmented reality applications_
 
 **Note this SDK is in it's beta phase and will be under heavy development as we move towards our 1.0**
 
