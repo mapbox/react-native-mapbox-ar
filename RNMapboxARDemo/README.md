@@ -2,7 +2,7 @@
 
 # Getting started
 
-You will need to create a `token.json` file that will contain your Mapbox access token
+You will need to create a `tokens.json` file that will contain your Mapbox access token
 and Viro API key
 
 ```
