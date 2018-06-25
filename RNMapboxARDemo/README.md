@@ -25,7 +25,7 @@ Starting from directory `react-native-mapbox-ar`
 ```
 npm i or yarn install
 cd RNMapboxARDemo
-npm i or yarn instal
+npm i or yarn install
 
 # iOS only
 cd ios
